@@ -1,0 +1,17 @@
+version: 2
+updates:
+  # Update Python dependencies from Poetry (pyproject.toml + poetry.lock)
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    allow:
+      - dependency-type: "direct"
+      - dependency-type: "all"
+    open-pull-requests-limit: 10
+
+  # Keep GitHub Actions versions up to date
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
